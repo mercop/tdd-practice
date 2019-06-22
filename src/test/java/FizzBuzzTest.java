@@ -1,3 +1,4 @@
+
 import com.tencent.jace.practice.FizzBuzzGame;
 
 import org.junit.Assert;
@@ -8,15 +9,19 @@ import org.junit.Test;
  */
 public class FizzBuzzTest {
 
+  public static String FIZZ = "Fizz";
+  public static String BUZZ = "Buzz";
+  public static String FIZZBUZZ = "FizzBuzz";
+
   FizzBuzzGame fizzBuzzBiz = new FizzBuzzGame(100, 3, 5);
 
   @Test
   public void testIsSpecialNum() {
     String reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(3);
-    Assert.assertEquals(reportInfo, Constant.FIZZ_REPORT);
+    Assert.assertEquals(reportInfo, FIZZ);
 
     reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(5);
-    Assert.assertEquals(reportInfo, Constant.BUZZ_REPORT);
+    Assert.assertEquals(reportInfo, BUZZ);
   }
 
   @Test
@@ -28,25 +33,25 @@ public class FizzBuzzTest {
   @Test
   public void testIsSpecialNumOfMuti() {
     String reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(6);
-    Assert.assertEquals(reportInfo, Constant.FIZZ_REPORT);
+    Assert.assertEquals(reportInfo, FIZZ);
 
     reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(10);
-    Assert.assertEquals(reportInfo, Constant.BUZZ_REPORT);
+    Assert.assertEquals(reportInfo, BUZZ);
   }
 
   @Test
   public void testIsFizzBuz() {
     String reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(15);
-    Assert.assertEquals(reportInfo, Constant.FIZZBUZZ_REPORT);
+    Assert.assertEquals(reportInfo, FIZZBUZZ);
   }
 
   @Test
   public void testNumContainFizzNum() {
     String reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(13);
-    Assert.assertEquals(reportInfo, Constant.FIZZ_REPORT);
+    Assert.assertEquals(reportInfo, FIZZ);
 
     reportInfo = fizzBuzzBiz.getFizzBuzzReportNum(52);
-    Assert.assertEquals(reportInfo, Constant.BUZZ_REPORT);
+    Assert.assertEquals(reportInfo, BUZZ);
   }
 
   @Test

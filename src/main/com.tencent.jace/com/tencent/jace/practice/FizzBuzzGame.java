@@ -10,6 +10,10 @@ public class FizzBuzzGame {
   private int fizzNum;
   private int buzzNum;
 
+  public static String FIZZ = "Fizz";
+  public static String BUZZ = "Buzz";
+  public static String FIZZBUZZ = "FizzBuzz";
+
   public FizzBuzzGame(int studentNums, int fizzNum, int buzzNum) {
     this.studentNums = studentNums;
     this.fizzNum = fizzNum;
@@ -23,22 +27,22 @@ public class FizzBuzzGame {
    */
   public String getFizzBuzzReportNum(int num) {
 
-    if (checkIsFizzBuzzNum(num)) {
-      return Constant.FIZZBUZZ_REPORT;
+    if (isFizzBuzzNum(num)) {
+      return FIZZBUZZ;
     }
 
-    if (checkIsFizz(num)) {
-      return Constant.FIZZ_REPORT;
+    if (isFizz(num)) {
+      return FIZZ;
     }
 
-    if (checkIsBuzz(num)) {
-      return Constant.BUZZ_REPORT;
+    if (isBuzz(num)) {
+      return BUZZ;
     }
 
     return String.valueOf(num);
   }
 
-  private boolean checkIsBuzz(int count) {
+  private boolean isBuzz(int count) {
     if (count % buzzNum == 0) {
       return true;
     }
@@ -59,7 +63,7 @@ public class FizzBuzzGame {
     return false;
   }
 
-  private boolean checkIsFizz(int count) {
+  private boolean isFizz(int count) {
     if (count % fizzNum == 0) {
       return true;
     }
@@ -70,8 +74,8 @@ public class FizzBuzzGame {
     return false;
   }
 
-  private boolean checkIsFizzBuzzNum(int count) {
-    if (checkIsFizz(count) && checkIsBuzz(count)) {
+  private boolean isFizzBuzzNum(int count) {
+    if (isFizz(count) && isBuzz(count)) {
       return true;
     }
     return false;
